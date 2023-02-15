@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Calend3eth {
+contract cal3 {
     uint rate;
     address payable public owner;
 
