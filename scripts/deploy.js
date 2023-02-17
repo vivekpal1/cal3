@@ -1,14 +1,14 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Contract = await hre.ethers.getContractFactory("Calend3eth");
+  const Contract = await hre.ethers.getContractFactory("cal3");
   const contract = await Contract.deploy();
 
   await contract.deployed();
 
   saveFrontendFiles();
 
-  console.log("Calend3eth deployed to:", contract.address);
+  console.log("cal3 deployed to:", contract.address);
 }
 
 function saveFrontendFiles() {
@@ -20,10 +20,10 @@ function saveFrontendFiles() {
     fs.mkdirSync(abiDir);
   }
 
-  const artifact = artifacts.readArtifactSync("Calend3eth");
+  const artifact = artifacts.readArtifactSync("cal3");
 
   fs.writeFileSync(
-    abiDir + "/Calend3eth.json",
+    abiDir + "/cal3.json",
     JSON.stringify(artifact, null, 2)
   );
 }
